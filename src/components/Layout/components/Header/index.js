@@ -1,8 +1,12 @@
 import classNames from 'classnames/bind';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faCircleXmark, faMagnifyingGlass, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark, faMagnifyingGlass, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import styles from './Header.module.scss';
 import images from '~/asset/images';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
 
 const cx = classNames.bind(styles);
 
@@ -21,9 +25,11 @@ function Header() {
                         <FontAwesomeIcon icon={faCircleXmark} />
                     </button>
                     <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
-                    <button className={cx('search-btn')}>
-                        <FontAwesomeIcon icon={faMagnifyingGlass} />
-                    </button>
+                    <Tippy content="Tim kiem">
+                        <button className={cx('search-btn')}>
+                            <FontAwesomeIcon icon={faMagnifyingGlass} />
+                        </button>
+                    </Tippy>
                 </div>
                 <div className={cx('actions')}></div>
             </div>

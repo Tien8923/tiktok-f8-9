@@ -9,6 +9,8 @@
     box-shadow: rgba(255, 255, 255, 0.12) 0px 1px 1px;
     display: flex;
     justify-content: center;
+    padding-right: 24px;
+    padding-left: 16px;
 }
 .inner {
     height: 100%;
@@ -20,6 +22,12 @@
 }
 
 .logo {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    min-width: 300px;
+    margin-inline-start: unset;
+    margin-top: 10px;
 }
 
 .search,
@@ -98,4 +106,8 @@
     &:active {
         background-color: rgba(255, 255, 255, 0.08);
     }
+}
+
+.custom-login {
+    color: red;
 }

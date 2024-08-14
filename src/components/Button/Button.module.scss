@@ -1,0 +1,100 @@
+.wrapper {
+    font-weight: 700;
+    font-size: 16px;
+    min-width: 100px;
+    padding: 6px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #000;
+    min-height: 36px;
+    user-select: none; // k boi den dc chu "Log in"
+
+    + .wrapper {
+        margin-left: 8px;
+    }
+
+    &.disabled {
+        pointer-events: none; // mat hieu ung chuot, khi dua qua k co phan ung gi vs button
+        opacity: 0.5; // lam ho button k co cam giac nhan dc nua
+    }
+}
+
+.icon + .title,
+.title + .icon {
+    margin-left: 8px;
+}
+
+// Button types
+.primary {
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 59, 92);
+
+    &:hover {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), rgb(254, 44, 85);
+    }
+}
+
+.outline {
+    border-width: 1px;
+    border-style: solid;
+    color: rgb(255, 59, 92);
+    border-color: currentColor;
+
+    &:hover {
+        background-color: rgba(254, 44, 85, 0.06);
+    }
+}
+
+.rounded {
+    border: 1px solid rgba(255, 255, 255, 0);
+    background: none rgb(37, 37, 37);
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 700;
+    font-size: 14px;
+    padding: 0px 8px;
+    min-width: 90px;
+    height: 32px;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 8px;
+    border-radius: 52px;
+
+    &:hover {
+        border-color: rgba(255, 255, 255, 0);
+        background-color: rgb(46, 46, 46);
+    }
+}
+
+.text {
+    color: #fff;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+// Disabled
+
+// Button sizes
+.small {
+    min-width: 106px;
+    padding: 6px 8px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 59, 92);
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 8px;
+    border-color: rgb(255, 59, 92);
+}
+
+.large {
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    color: rgb(255, 59, 92);
+    border-color: rgb(255, 59, 92);
+    background-color: rgba(255, 255, 255, 0.08);
+    min-width: 168px;
+    min-height: 48px;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 6px 8px;
+}

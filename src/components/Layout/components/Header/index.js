@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faMagnifyingGlass, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark, faMagnifyingGlass, faSignIn, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 ///
+import Button from '~/components/Button';
 import { Wrapper as PropperWrapper } from '~/components/Popper';
 import styles from './Header.module.scss';
 import images from '~/asset/images';
@@ -57,7 +58,22 @@ function Header() {
                         </Tippy>
                     </div>
                 </Tippy>
-                <div className={cx('actions')}></div>
+                <div className={cx('actions')}>
+                    {/* <Button primary to="https://github.com/Tien8923/tiktok-f8-9" target="_blank">14phut */}
+                    {/* <Button text>Upload</Button> */}
+                    <Button primary disabled>
+                        Log in
+                    </Button>
+                    {/* <Button primary rounded>
+                        Get app
+                    </Button> */}
+                    {/* <Button rounded className={cx('custom-login')}>
+                        Log in
+                    </Button> */}
+                    <Button rounded leftIcon={<FontAwesomeIcon icon={faSignIn} />}>
+                        Log in
+                    </Button>
+                </div>
             </div>
         </header>
     );

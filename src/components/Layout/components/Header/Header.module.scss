@@ -17,6 +17,7 @@
     width: var(--default-layout-width, 1480px);
     background-color: #000;
     display: flex;
+    // padding: 0 var(--default-layout-horizontal-spacer);
     align-items: center;
     justify-content: space-between;
 }
@@ -118,4 +119,5 @@
     background: #000;
     color: #fff;
     padding: 0px 10px;
+    cursor: pointer;
 }

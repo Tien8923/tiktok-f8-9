@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { Children, useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -23,6 +23,7 @@ import styles from './Header.module.scss';
 import images from '~/asset/images';
 import AccountItem from '~/components/AccounItem';
 import Menu from '~/components/Popper/Menu';
+import { type } from '@testing-library/user-event/dist/type';
 
 const cx = classNames.bind(styles);
 
@@ -34,6 +35,21 @@ const MENU_ITEMS = [
     {
         icon: <FontAwesomeIcon icon={faEarthAsia} />,
         title: 'English',
+        children: {
+            title: 'language',
+            data: [
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Vietnamese',
+                },
+            ],
+        },
     },
     {
         icon: <FontAwesomeIcon icon={faCircleQuestion} />,
@@ -55,6 +71,17 @@ function Header() {
             // setSearchResult([]);
         }, 0);
     }, []);
+
+    // Handle logic
+    const handeMenuChange = (menuItem) => {
+        // console.log(menuItem);
+        switch (menuItem.type) {
+            case 'language':
+                // Handle change language
+                break;
+            default:
+        }
+    };
 
     return (
         <header className={cx('wapper')}>
@@ -95,9 +122,7 @@ function Header() {
                 <div className={cx('actions')}>
                     {/* <Button primary to="https://github.com/Tien8923/tiktok-f8-9" target="_blank">14phut */}
                     {/* <Button text>Upload</Button> */}
-                    <Button primary disabled>
-                        Log in
-                    </Button>
+                    <Button primary>Log in</Button>
                     {/* <Button primary rounded>
                         Get app
                     </Button> */}
@@ -109,7 +134,7 @@ function Header() {
                     </Button> */}
 
                     {/* Menu */}
-                    <Menu items={MENU_ITEMS}>
+                    <Menu items={MENU_ITEMS} onchange={handeMenuChange}>
                         <button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />
                         </button>

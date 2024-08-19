@@ -1,7 +1,20 @@
 import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faMagnifyingGlass, faSignIn, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import {
+    faCircle,
+    faCircleQuestion,
+    faCircleXmark,
+    faEarthAsia,
+    faEllipsis,
+    faEllipsisVertical,
+    faHouse,
+    faHouseUser,
+    faMagnifyingGlass,
+    faMoon,
+    faSignIn,
+    faSpinner,
+} from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 ///
 import Button from '~/components/Button';
@@ -9,8 +22,29 @@ import { Wrapper as PropperWrapper } from '~/components/Popper';
 import styles from './Header.module.scss';
 import images from '~/asset/images';
 import AccountItem from '~/components/AccounItem';
+import Menu from '~/components/Popper/Menu';
 
 const cx = classNames.bind(styles);
+
+const MENU_ITEMS = [
+    {
+        icon: <FontAwesomeIcon icon={faHouseUser} />,
+        title: 'Creator tools',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faEarthAsia} />,
+        title: 'English',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+        title: 'Feedback and help',
+        to: '/feedback',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faMoon} />,
+        title: 'Dark mode',
+    },
+];
 
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
@@ -70,9 +104,16 @@ function Header() {
                     {/* <Button rounded className={cx('custom-login')}>
                         Log in
                     </Button> */}
-                    <Button rounded leftIcon={<FontAwesomeIcon icon={faSignIn} />}>
-                        Log in
-                    </Button>
+                    {/* <Button rounded leftIcon={<FontAwesomeIcon icon={faSignIn} />}>
+                        Log out
+                    </Button> */}
+
+                    {/* Menu */}
+                    <Menu items={MENU_ITEMS}>
+                        <button className={cx('more-btn')}>
+                            <FontAwesomeIcon icon={faEllipsisVertical} />
+                        </button>
+                    </Menu>
                 </div>
             </div>
         </header>

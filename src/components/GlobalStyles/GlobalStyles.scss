@@ -1,5 +1,5 @@
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;900&display=swap');
 
 :root {
     --primary: #fe2c55;
@@ -42,4 +42,25 @@ input,
 a[href] {
     color: var(--text-color);
     text-decoration: none;
+}
+
+// custom tippy tooltip
+body {
+    .tippy-box {
+        background-color: rgba(84, 84, 84, 0.92);
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 16px;
+        color: rgb(255, 255, 255);
+    }
+
+    .tippy-content {
+        padding: 8px 9px;
+    }
+
+    .tippy-arrow {
+        display: block;
+        position: absolute;
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzYiIGhl…4TDM2IDhMMCA4WiIgZmlsbD0iIzI1MjUyNSIvPgo8L3N2Zz4K');
+    }
 }

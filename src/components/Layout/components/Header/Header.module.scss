@@ -113,11 +113,34 @@
     color: red;
 }
 
+// Actions
+.actions {
+    display: flex;
+    align-items: center;
+}
+
 .more-btn {
     font-size: 2rem;
     margin-left: 16px;
     background: #000;
     color: #fff;
     padding: 0px 10px;
+    cursor: pointer;
+}
+
+.actions-btn {
+    background-color: transparent;
+    color: #fff;
+    font-size: 2.6rem;
+    padding: 4px 14px;
+    cursor: pointer;
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 12px;
     cursor: pointer;
 }
